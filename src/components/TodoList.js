@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
-import style from './TodoList.css';
+import './TodoList.css';
+import './TodoList.sass';
 
 class TodoList extends React.Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class TodoList extends React.Component {
 
     render() {
         return (
-            <div className={style.TodoListStyle}>
+            <div className={'TodoListStyle'}>
                 <ul>{this.props.data.map(item=>(
                     <li key={item.id}>
                         {item.text}
