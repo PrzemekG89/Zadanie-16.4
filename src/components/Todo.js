@@ -1,0 +1,28 @@
+import TodoForm from './TodoForm';
+import './Todo.sass';
+
+class Todo extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className={'TodoListStyle'}>
+                {this.props.data.map(item => (
+                    <span>
+                        {item.text}
+                        <button className="removeButton" onClick={() => this.props.remove(item.id)}>Delete</button>
+                    </span>
+                ))}
+            </div>
+        );
+    }
+}
+
+TodoList.propTypes = {
+    remove: PropTypes.func.isRequired,
+    data: PropTypes.array.isRequired
+};
+
+export default Todo;

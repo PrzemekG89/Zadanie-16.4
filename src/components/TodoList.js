@@ -1,6 +1,6 @@
 import React from 'react';
 import uuid from 'uuid';
-import './TodoList.css';
+import PropTypes from 'prop-types';
 import './TodoList.sass';
 
 class TodoList extends React.Component {
@@ -21,5 +21,10 @@ class TodoList extends React.Component {
         )
     }
 };
+
+TodoList.propTypes = {
+    remove: PropTypes.func.isRequired,
+    data: PropTypes.array.isRequired
+}
 
 export default TodoList;
